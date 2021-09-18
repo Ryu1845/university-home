@@ -16,9 +16,6 @@ export CODE="/home/ryu/Documents/Code"
 export PATH="/home/ryu/.local/bin:/home/ryu/.deta/bin:$PATH"
 export LESSOPEN="| /usr/bin/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
-export PYTHONPATH='/usr/lib/python3.9/site-packages/pdm/pep582':$PYTHONPATH
-export MCFLY_FUZZY=true
-export MCFLY_KEY_SCHEME=emacs
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -119,16 +116,5 @@ alias Nq='exit'
 alias git-config='git config --local user.name "Ryu18" && git config --local user.email "ryu@tpgjbo.xyz"'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-bypass-clyde(){
-    convert "$1" -print "%wx%h" /dev/null |\
-    xargs -I%\
-        convert \
-            -delay 0 -size % xc:transparent \
-            -delay 30000 "$1" "${1%.*}.gif"
-}
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
-fi
