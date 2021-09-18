@@ -132,5 +132,3 @@ bypass-clyde(){
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
-eval "$(mcfly init zsh)"
-bindkey '^N' mcfly-history-widget
