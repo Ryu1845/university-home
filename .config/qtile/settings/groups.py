@@ -23,11 +23,9 @@ from .keys import keys, mod
 groups = [
     Group(i)
     for i in [
+        "   ",
         "   ",
-        "   ",
         "   ",
-        "   ",
-        " ﭮ  ",
     ]
 ]
 top_row = [

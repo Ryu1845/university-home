@@ -1,6 +1,9 @@
 from libqtile import widget
+from university.courses import Courses
 
 from .theme import colors
+
+COURSES = Courses()
 
 # Get the icons at https://www.nerdfonts.com/cheat-sheet (you need a Nerd Font)
 
@@ -57,15 +60,12 @@ primary_widgets = [
     *workspaces(),
     separator(),
     powerline("color4", "dark"),
-    icon(bg="color4", text=" "),  # Icon: nf-fa-download
-    widget.CheckUpdates(
-        background=colors["color4"],
-        colour_have_updates=colors["text"],
-        colour_no_updates=colors["text"],
-        no_update_string="0",
-        display_format="{updates}",
-        update_interval=1800,
-        custom_command="checkupdates",
+    icon(bg="color4", text=" "),
+    widget.TextBox(
+        **base(bg=colors["color4"], fg=colors["text"]),
+        text=COURSES.current.info["short"],
+        fontsize=16,
+        padding=3
     ),
     powerline("color3", "color4"),
     icon(bg="color3", text=" "),  # Icon: nf-fa-feed

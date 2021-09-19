@@ -4,9 +4,8 @@
 
 # Qtile keybindings
 
-from libqtile.config import Key
 from libqtile.command import lazy
-
+from libqtile.config import Key
 
 mod = "mod4"
 
@@ -45,16 +44,14 @@ keys = [
         # Window Nav
         ([mod, "shift"], "m", lazy.spawn("rofi -show")),
         # Browser
-        ([mod], "b", lazy.spawn("brave")),
+        ([mod], "b", lazy.spawn("firefox")),
         # File Explorer
         ([mod], "e", lazy.spawn("pcmanfm")),
         # Terminal
         ([mod], "Return", lazy.spawn("kitty")),
-        # Discord
-        ([mod], "d", lazy.spawn("discord-canary")),
         # Screenshot
-        ([mod], "s", lazy.spawn("scrot")),
-        ([mod, "shift"], "s", lazy.spawn("scrot -s")),
+        ([mod], "s", lazy.spawn("maim")),
+        ([mod, "shift"], "s", lazy.spawn("maim -s")),
         # ------------ Hardware Configs ------------
         # Volume
         (
